@@ -25,7 +25,7 @@ SECRET_KEY = 'eqm&rdrj@x9l@x6k!*7pfku984fj64i0117447ad@!08%rul$c'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -79,7 +79,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'familylibrarydb',
         'USER': 'avee',
-        'PASSWORD': 'secure',
+        'PASSWORD': 'secure_database_65137',
         'HOST': '127.0.0.1',
         'PORT': '3306',
         'OPTIONS': {

@@ -14,6 +14,7 @@
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href=" {% static 'css/styles.css' %}" rel="stylesheet" />
     </head>
@@ -21,14 +22,14 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="#page-top">Start Bootstrap</a>
+                <a class="navbar-brand js-scroll-trigger" href="#page-top">লাইব্রেরি</a>
                 <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu
+                    মেনু
                     <i class="fas fa-bars"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Portfolio</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">বইয়ের লিস্ট</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">About</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Contact</a></li>
                     </ul>
@@ -65,7 +66,37 @@
                 </div>
                 <!-- Portfolio Grid Items-->
                 <div class="row">
-                    
+                    <div class="col-md-12 col-sm-12">
+                        <div class="table-responsive">
+                            <table id="example" class="table table-striped table-hover table-condensed table-bordered" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Name</th>
+                                        <th>Author</th>
+                                        <th>Location</th>
+                                        <th>Availablity</th>
+                                        
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for book in allBook %}
+                                        <tr>
+                                            <td>{{forloop.counter}}</td>
+                                            <td>{{book.name}}</td>
+                                            <td>{{book.author}}</td>
+                                            <td>{{book.location}}</td>
+                                            {% if book.in_stock == True %}
+                                                <td><button class="btn btn-primary">Available</button></td>
+                                            {% else %}
+                                                <td><button class="btn btn-danger">Not Available</button></td>
+                                            {% endif %}
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -198,5 +229,15 @@
         <script src="{% static 'assets/mail/contact_me.js' %}"></script>
         <!-- Core theme JS-->
         <script src="{% static 'js/scripts.js' %}"></script>
+        <script>
+            $(document).ready(function() {
+                $('#example').DataTable();
+            } );
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+
+
     </body>
 </html>
