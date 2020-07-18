@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Freelancer - Start Bootstrap Theme</title>
+        <title>পারিবারিক পাঠাগার</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="{% static 'assets/img/favicon.ico' %}" />
         <!-- Font Awesome icons (free version)-->
@@ -22,7 +22,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="#page-top">লাইব্রেরি</a>
+                <a class="navbar-brand js-scroll-trigger" href="#page-top">পাঠাগার</a>
                 <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     মেনু
                     <i class="fas fa-bars"></i>
@@ -30,8 +30,8 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">বইয়ের লিস্ট</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">About</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Contact</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">আড্ডা</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">মিলনমেলা </a></li>
                     </ul>
                 </div>
             </div>
@@ -42,7 +42,7 @@
                 <!-- Masthead Avatar Image-->
                 <img class="masthead-avatar mb-5" src="{% static 'assets/img/home.jpg' %}" alt="" />
                 <!-- Masthead Heading-->
-                <h1 class="masthead-heading text-uppercase mb-0">পারিবারিক লাইব্রেরি</h1>
+                <h1 class="masthead-heading text-uppercase mb-0">পারিবারিক পাঠাগার</h1>
                 <!-- Icon Divider-->
                 <div class="divider-custom divider-light">
                     <div class="divider-custom-line"></div>
@@ -51,6 +51,7 @@
                 </div>
                 <!-- Masthead Subheading-->
                 <p class="masthead-subheading font-weight-light mb-0">মেথারোড, চাঁদপুর <span>এবং</span>   তেজকুনি পাড়া, ঢাকা</p>
+                <p class="masthead-subheading font-weight-light mb-0">আমরা দরজা জানালা খুলে পড়ি</p>
             </div>
         </header>
         <!-- Portfolio Section-->
@@ -71,12 +72,11 @@
                             <table id="example" class="table table-striped table-hover table-condensed table-bordered" style="width:100%">
                                 <thead>
                                     <tr>
-                                        <th>No</th>
-                                        <th>Photo</th>
-                                        <th>Name</th>
-                                        <th>Author</th>
-                                        <th>Location</th>
-                                        <th>Availablity</th>
+                                        <th>নং</th>
+                                        <th>নাম</th>
+                                        <th>লেখক/লেখিকা</th>
+                                        <th>ঠিকানা</th>
+                                        <th>আছে/নাই</th>
                                         
                                     </tr>
                                 </thead>
@@ -84,14 +84,13 @@
                                     {% for book in allBook %}
                                         <tr>
                                             <td>{{forloop.counter}}</td>
-                                            <td><img src="{{ book.photo.url }}" class="photo"></td>
                                             <td>{{book.name}}</td>
                                             <td>{{book.author}}</td>
                                             <td>{{book.location}}</td>
                                             {% if book.in_stock == True %}
-                                                <td><button class="btn btn-primary">Available</button></td>
+                                                <td><button class="btn btn-primary">আছে</button></td>
                                             {% else %}
-                                                <td><button class="btn btn-danger">Not Available</button></td>
+                                                <td><button class="btn btn-danger">নাই</button></td>
                                             {% endif %}
                                         </tr>
                                     {% endfor %}
@@ -106,7 +105,7 @@
         <section class="page-section bg-primary text-white mb-0" id="about">
             <div class="container">
                 <!-- About Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-white">About</h2>
+                <h2 class="page-section-heading text-center text-uppercase text-white">আড্ডা</h2>
                 <!-- Icon Divider-->
                 <div class="divider-custom divider-light">
                     <div class="divider-custom-line"></div>
@@ -131,7 +130,7 @@
         <section class="page-section" id="contact">
             <div class="container">
                 <!-- Contact Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Contact Me</h2>
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">মিলনমেলা</h2>
                 <!-- Icon Divider-->
                 <div class="divider-custom">
                     <div class="divider-custom-line"></div>

@@ -18,7 +18,6 @@ class LibraryLocation(models.Model):
     
 
 class Book(models.Model):
-    photo = models.ImageField(upload_to='uploads/',default='static/assets/img/cabin.png')
     name = models.CharField(max_length=100)
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
     location = models.ForeignKey(LibraryLocation, on_delete=models.CASCADE)
