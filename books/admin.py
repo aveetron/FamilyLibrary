@@ -3,4 +3,7 @@ from books.models import *
 
 # Register your models here.
 
+
+admin.site.register(Author)
+admin.site.register(LibraryLocation)
 admin.site.register(Book)

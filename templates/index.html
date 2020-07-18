@@ -72,6 +72,7 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
+                                        <th>Photo</th>
                                         <th>Name</th>
                                         <th>Author</th>
                                         <th>Location</th>
@@ -83,6 +84,7 @@
                                     {% for book in allBook %}
                                         <tr>
                                             <td>{{forloop.counter}}</td>
+                                            <td><img src="{{ book.photo.url }}" class="photo"></td>
                                             <td>{{book.name}}</td>
                                             <td>{{book.author}}</td>
                                             <td>{{book.location}}</td>
