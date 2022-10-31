@@ -6,6 +6,8 @@ services:
     build: .
     volumes:
       - .:/app
+    env:
+      - prod.env
     ports:
       - 8000:8000
     command: >
